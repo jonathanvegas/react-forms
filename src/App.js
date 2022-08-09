@@ -7,8 +7,8 @@ function App() {
   const [validForm, setValidForm] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [title,setTitle] = useState("");
-  const [description, setDescription] = useState("your description");
-  const [author, setAuthor] = useState("todd albert");
+  const [description, setDescription] = useState("");
+  const [author, setAuthor] = useState("");
 
   useEffect(() => {
     if(title.length > 3 && description.length > 10){
