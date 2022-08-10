@@ -25,7 +25,7 @@ const Contact = () => {
         <Modal.Body>
           <Form 
           handleClose={handleClose} 
-          ronsProp='Call it my form'
+          ronsProps='Call it my form'
           aliciasProps={['music', 'food']}
           setstateFromChild={setstateFromChild}
           />

@@ -44,7 +44,7 @@ export default function Form({ronsProps, aliciasProps, handleClose, setstateFrom
       setValidForm(true);
       
       handleClose();
-      setstateFromChild(results);
+      setstateFromChild(form);
 
     } catch(error){
       console.log(error);
