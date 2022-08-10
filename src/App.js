@@ -1,3 +1,7 @@
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+
+
+
 import './App.css';
 import {Home} from './pages/Home'
 import Footer from './components/Footer';
@@ -8,12 +12,23 @@ import Contact from './pages/Contact'
 
 const App = () => {
   return(
-    <>
-      <Home />
+    <BrowserRouter>
       <Header />
-      <About />
-      <Contact />
-      <Footer />
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path='about' element={ <About /> }/>
+        <Route path='contact' element={ <Contact />} />
+        <Route path='*' element={<NotFound />} />
+      </Routes>
+      <Footer />      
+      </BrowserRouter>
+  )
+}
+
+const NotFound =() => {
+  return(
+    <>
+    <h3>Page not found</h3>
     </>
   )
 }

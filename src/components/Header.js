@@ -1,7 +1,25 @@
+import {Link} from 'react-router-dom'
+import {Nav} from 'react-bootstrap'
+
 const Header = () => (
-  <>
-    <h3>this is header</h3>
-  </>
+  <Nav activeKey="/home">
+    <Nav.Item>
+      <Nav.Link as={Link} to = '/'>
+        Home
+      </Nav.Link>
+    </Nav.Item>
+    <Nav.Item>
+      <Nav.Link as={Link} to = '/about'>
+        About
+      </Nav.Link>
+    </Nav.Item>
+    <Nav.Item>
+      <Nav.Link as={Link} to = '/contact'>
+        Contact
+      </Nav.Link>
+    </Nav.Item>
+    
+  </Nav>
 )
 
 export default Header;
