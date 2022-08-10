@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
-export default function Form() {
+
+export default function Form({ronsProps, aliciasProps, handleClose, setstateFromChild}) {
 
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [validForm, setValidForm] = useState(false);
@@ -15,7 +16,6 @@ export default function Form() {
     }
   },[form])
 
-  // console.log(title);
 
   //const formSubmit = async (e) => {
 
@@ -42,6 +42,9 @@ export default function Form() {
       setFormSubmitted(true);
       setErrorMessage("");
       setValidForm(true);
+      
+      handleClose();
+      setstateFromChild(results);
 
     } catch(error){
       console.log(error);
@@ -59,6 +62,7 @@ export default function Form() {
 
   return (
     <div className="App">
+      <h3>{ronsProps}</h3>
       <form onSubmit={formSubmit}>
         <h1>Comments</h1>
         
@@ -95,7 +99,7 @@ export default function Form() {
           <option value="other">Other</option>
         </select>
         <h3>{form.author}</h3>
-
+        <button onClick={() => setstateFromChild('hello father')}> send stuff back to parent </button>
         {!formSubmitted &&
           <button>Submit Form</button>
         }
